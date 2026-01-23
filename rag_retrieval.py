@@ -138,7 +138,7 @@ try:
 
     # Integrate data and RAG chain
     for doc_name, group_df in grouped_rows.items():
-        pdf_folder = "/workspace/data/Jyoti/Ambiguity/PURE/PURE_420_Ambiguity_Project/PDFs/"
+        pdf_folder = "/workspace/path/Ambiguity/PURE/PURE_420/PDFs/"
         pdf_path = os.path.join(pdf_folder, f"{doc_name}.pdf")
 
         if os.path.exists(pdf_path):
