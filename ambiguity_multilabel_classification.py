@@ -96,5 +96,5 @@ for req in requirements:
   count+=1
 
 pure['Responses'] = responses
-pure.to_excel("/workspace/data/Jyoti/Dataset_notes/Ambiguity/PROMISE_classes_binary.xlsx", index=False)
+pure.to_excel("/workspace/path/Ambiguity/PROMISE_classes_binary.xlsx", index=False)
 #   print("*"*100)
