@@ -50,7 +50,7 @@ for counter, (requirement, classification, explanation) in enumerate(zip(require
       #     Rubric(score_range=(0,0), expected_outcome="Incorrect Judgement."),
       #     Rubric(score_range=(1,1), expected_outcome="Correct Judgement."),
       # ],
-      threshold= 0.75)
+      threshold= 0.8)
   correctness_metric.measure(test_case)
   judgements.append(correctness_metric.score)
   reasonings.append(correctness_metric.reason)
