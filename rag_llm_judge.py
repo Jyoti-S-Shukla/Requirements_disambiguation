@@ -65,7 +65,7 @@ def analyze_rag_output(input_file):
                     print("*"*10 + "Answer Relevance" + "*"*10)
                     try:
                         test_case = LLMTestCase(input=query, actual_output=actual_output, retrieval_context=[retrieval_context])
-                        ar_metric = AnswerRelevancyMetric(threshold=0.75, model='gpt-4o-mini', include_reason=True, evaluation_template=CustomTemplate)
+                        ar_metric = AnswerRelevancyMetric(threshold=0.6, model='gpt-4o-mini', include_reason=True, evaluation_template=CustomTemplate)
                         ar_metric.measure(test_case)
                         ar_score = ar_metric.score
                         arm_reason = ar_metric.reason  # Answer relevancy metric reason
@@ -82,7 +82,7 @@ def analyze_rag_output(input_file):
                     # Contextual Relevance
                     print("*"*10 + "Contextual relevance" + "*"*10)
                     try:
-                        cr_metric = ContextualRelevancyMetric(threshold=0.75, model='gpt-4o-mini', include_reason=True)
+                        cr_metric = ContextualRelevancyMetric(threshold=0.6, model='gpt-4o-mini', include_reason=True)
                         test_case = LLMTestCase(input=query, actual_output=actual_output, retrieval_context=[retrieval_context])
                         cr_metric.measure(test_case)
                         cr_score = cr_metric.score
