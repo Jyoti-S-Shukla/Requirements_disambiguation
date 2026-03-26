@@ -7,6 +7,7 @@ Stage I — Ambiguity Detection: Two LLMs (LLaMA 3.1-8B and Qwen2-7B) independen
 Stage II — Document-Level Resolution (RAG): The source SRS document is indexed in a vector store (ChromaDB with BAAI/bge-large-en-v1.5 embeddings). Probing questions from Stage I are answered using retrieved document chunks, resolving ambiguities that are clarifiable from within the document itself. Requirements successfully resolved here exit the pipeline with a QA pair explanation.
 Stage III — Multi-Label Classification and Interpretation: Requirements unresolved by RAG are classified into one or more ambiguity types — lexical, semantic, syntactic, or vagueness — and three ranked alternative interpretations are generated, from most to least plausible. This gives analysts a structured, actionable set of resolutions to work from.
 Each stage is validated using an LLM-as-a-Judge paradigm, eliminating dependence on annotated training data.
+The codes for each module are present in the repository. 
 
 **Key results**
 Evaluated on 800 requirements from 56 SRS documents drawn from the PURE dataset
@@ -17,7 +18,7 @@ More than 75% of generated interpretations rated as useful by expert requirement
 End-to-end processing of 419 requirements in ~30 minutes versus ~3 days of manual effort
 
 **Dataset**
-This repository includes a publicly released dataset of 800 annotated software requirements extracted from 56 SRS documents, featuring:
+This repository includes a publicly released dataset of 800 annotated software requirements extracted from 56 SRS documents, in the excel file "ambiguity_multilabel_pure800_annotated.xlsx" featuring:
 
 Binary ambiguity labels
 Multi-label ambiguity type annotations (lexical, semantic, syntactic, vagueness)
